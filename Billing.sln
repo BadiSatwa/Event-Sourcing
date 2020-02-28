@@ -11,7 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Billing.Domain", "Billing.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Billing.Infrastructure", "Billing.Infrastructure\Billing.Infrastructure.csproj", "{657C1F5A-5D41-4F87-B262-49DE2FE99ABF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Billing.Web.UI", "Billing.Web.UI\Billing.Web.UI.csproj", "{7ABE09A8-9623-4317-B4F6-3EF1F2D10A7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Billing.Web.UI", "Billing.Web.UI\Billing.Web.UI.csproj", "{7ABE09A8-9623-4317-B4F6-3EF1F2D10A7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{E63098D5-4ACB-4DDE-BC3B-53036FD39339}"
+	ProjectSection(SolutionItems) = preProject
+		Docker\services.yml = Docker\services.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
