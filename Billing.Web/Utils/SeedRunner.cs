@@ -16,6 +16,9 @@ namespace Billing.Web.Utils
             using var scope = host.Services.CreateScope();
             var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
 
+            //Clear Query Model
+            await mediator.Send(new ClearQueryModel.Command());
+
             //Seeding Invoices
             await mediator.Send(new InvoiceSeed.Command());
 

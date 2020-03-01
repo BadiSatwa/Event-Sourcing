@@ -11,7 +11,7 @@ namespace Billing.Domain
 
         protected void RegisterEvent(IDomainEvent<TId> @event)
         {
-            Version++;
+            Apply(@event);
             _domainEvents.Add(@event);
         }
 

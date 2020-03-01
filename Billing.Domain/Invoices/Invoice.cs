@@ -13,8 +13,7 @@ namespace Billing.Domain.Invoices
 
         public Invoice(InvoiceId id)
         {
-            AggregateRootId = id;
-            RegisterEvent(new InvoiceCreated(AggregateRootId));
+            RegisterEvent(new InvoiceCreated(id));
         }
 
         public void AddExpense(Money value, string description)

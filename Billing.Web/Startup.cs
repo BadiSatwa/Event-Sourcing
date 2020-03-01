@@ -53,6 +53,7 @@ namespace Billing.Web
                 return new MongoClient(builder.ToMongoUrl());
             });
             services.AddScoped<DbContext>();
+            services.AddScoped<IStorage, DbContext>();
 
             //Event Store Configuration
             services.Configure<EventStoreOptions>(Configuration.GetSection("EventStore"));
