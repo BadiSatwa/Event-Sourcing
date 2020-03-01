@@ -4,6 +4,7 @@ using Billing.App.Features.Invoices;
 using Billing.Infrastructure;
 using Billing.Infrastructure.Db;
 using Billing.Infrastructure.EventStore;
+using Billing.Infrastructure.Projections;
 using Billing.Infrastructure.Queries;
 using EventStore.ClientAPI;
 using MediatR;
@@ -66,7 +67,8 @@ namespace Billing.Web
                 return connection;
             });
 
-            //Queries
+            //Queries & Query Model
+            services.AddScoped<IQueryModelManager, MongoQueryModelManager>();
             services.AddScoped(
                 typeof(IViewModelQuery<Empty, IEnumerable<GetInvoices.Result>>),
                 typeof(GetInvoicesQuery));
