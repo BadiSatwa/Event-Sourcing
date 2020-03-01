@@ -1,6 +1,5 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using Billing.App;
 using Billing.Domain.Invoices;
 using Billing.Infrastructure.Db;
 using Billing.Infrastructure.Db.Models;

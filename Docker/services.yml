@@ -24,3 +24,6 @@ services:
     ports:
       - 1113:1113
       - 2113:2113
+    environment:
+      EVENTSTORE_RUN_PROJECTIONS: all
+      EVENTSTORE_START_STANDARD_PROJECTIONS: "true"

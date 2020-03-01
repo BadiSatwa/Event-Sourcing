@@ -32,7 +32,7 @@ namespace Billing.Web
         {
             services.AddCors(options =>
                 options.AddPolicy(_corsPolicyName, builder => builder.WithOrigins("http://localhost:3000")));
-            services.AddMediatR(typeof(IRepository<,>));
+            services.AddMediatR(typeof(IRepository<,>), typeof(AggregateRootRepository<,>));
             services.AddControllers();
 
             services.AddScoped(typeof(IRepository<,>), typeof(AggregateRootRepository<,>));
@@ -60,7 +60,7 @@ namespace Billing.Web
             {
                 var options = s.GetRequiredService<IOptions<EventStoreOptions>>().Value;
                 var connection = EventStoreConnection
-                    .Create($"ConnectTo=tcp://{options.User}:{options.Password}@{options.Address}:{options.Port};");
+                    .Create($"ConnectTo=tcp://{options.UserName}:{options.Password}@{options.Address}:{options.Port};");
                 connection.ConnectAsync().Wait();
                 return connection;
             });
